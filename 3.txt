@@ -1,0 +1,20 @@
+ALTER TABLE  photo 
+    ADD COLUMN metadata JSON;
+
+UPDATE photo 
+SET metadata = json_build_object(
+    'id', id,
+    'url', url,
+    'size', size
+);
+
+
+vk=> SELECT metadata FROM photo WHERE id BETWEEN 5 AND 10;
+                              metadata
+--------------------------------------------------------------------
+ {"id" : 5, "url" : "https://vk.com/user/97?p=36", "size" : 12692}
+ {"id" : 6, "url" : "https://vk.com/user/18?p=23", "size" : 7993}
+ {"id" : 7, "url" : "https://vk.com/user/31?p=66", "size" : 3878}
+ {"id" : 8, "url" : "https://vk.com/user/88?p=76", "size" : 6075}
+ {"id" : 9, "url" : "https://vk.com/user/53?p=91", "size" : 3742}
+ {"id" : 10, "url" : "https://vk.com/user/34?p=15", "size" : 10183}
