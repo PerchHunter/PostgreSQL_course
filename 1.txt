@@ -1,0 +1,96 @@
+postgres=# CREATE ROLE fyodor_serov LOGIN;
+CREATE ROLE
+postgres=# CREATE ROLE roman_belov LOGIN;
+CREATE ROLE
+postgres=# CREATE ROLE testers;
+CREATE ROLE
+postgres=# CREATE ROLE analysts;
+CREATE ROLE
+postgres=# ALTER ROLE fyodor_serov WITH PASSWORD 'fyodor';
+ALTER ROLE
+postgres=# ALTER ROLE roman_belov WITH PASSWORD 'roman';
+ALTER ROLE
+
+postgres=# \c vk
+You are now connected to database "vk" as user "postgres".
+
+vk=# GRANT SELECT ON ALL TABLES IN SCHEMA public TO analysts;
+GRANT
+vk=# GRANT ALL ON ALL TABLES IN SCHEMA public TO testers;
+GRANT
+vk=# GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO testers;
+GRANT
+vk=# \z
+
+
+                                             Access privileges
+ Schema |            Name            |   Type   |     Access privileges     | Column privileges | Policies 
+--------+----------------------------+----------+---------------------------+-------------------+----------
+ public | communities                | table    | serg_feo=arwdDxt/serg_feo+|                   | 
+        |                            |          | analysts=r/serg_feo      +|                   | 
+        |                            |          | testers=arwdDxt/serg_feo  |                   | 
+ public | communities_id_seq         | sequence | serg_feo=rwU/serg_feo    +|                   | 
+        |                            |          | testers=rwU/serg_feo      |                   | 
+ public | communities_users          | table    | serg_feo=arwdDxt/serg_feo+|                   | 
+        |                            |          | analysts=r/serg_feo      +|                   | 
+        |                            |          | testers=arwdDxt/serg_feo  |                   | 
+...
+...
+...
+        |                            |          | testers=arwdDxt/serg_feo  |                   | 
+ public | users                      | table    | serg_feo=arwdDxt/serg_feo+|                   | 
+        |                            |          | analysts=r/serg_feo      +|                   | 
+        |                            |          | testers=arwdDxt/serg_feo  |                   | 
+ public | users_id_seq               | sequence | serg_feo=rwU/serg_feo    +|                   | 
+        |                            |          | testers=rwU/serg_feo      |                   | 
+ public | video                      | table    | serg_feo=arwdDxt/serg_feo+|                   | 
+        |                            |          | analysts=r/serg_feo      +|                   | 
+
+
+
+vk=# \q
+postgres@sergey-feoktistov:~$ psql -U fyodor_serov -d vk -h 127.0.0.1;
+Password for user fyodor_serov: 
+psql (12.12 (Ubuntu 12.12-0ubuntu0.20.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+vk=> SELECT * FROM users  WHERE id < 3;
+
+
+ id | first_name | last_name |              email               |     phone      | main_photo_id |     created_at      |                   user_contacts                   
+----+------------+-----------+----------------------------------+----------------+---------------+---------------------+---------------------------------------------------
+  1 | Rachel     | Buckley   | urna.suscipit.nonummy@google.net | 1-532-678-3951 |            70 | 2022-09-20 10:14:24 | (1-532-678-3951,urna.suscipit.nonummy@google.net)
+  2 | Alfonso    | Case      | sed@hotmail.ca                   | 1-592-151-6858 |            87 | 2022-07-26 10:02:53 | (1-592-151-6858,sed@hotmail.ca)
+(2 rows)
+
+
+vk=> UPDATE users SET first_name = 'Fyodor' WHERE id = 1;
+ERROR:  permission denied for table users
+vk=> 
+vk=> \q
+postgres@sergey-feoktistov:~$ psql -U roman_belov -d vk -h 127.0.0.1;
+Password for user roman_belov: 
+psql (12.12 (Ubuntu 12.12-0ubuntu0.20.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+vk=> SELECT * FROM users  WHERE id < 3;
+
+
+ id | first_name | last_name |              email               |     phone      | main_photo_id |     created_at      |                   user_contacts                   
+----+------------+-----------+----------------------------------+----------------+---------------+---------------------+---------------------------------------------------
+  1 | Rachel     | Buckley   | urna.suscipit.nonummy@google.net | 1-532-678-3951 |            70 | 2022-09-20 10:14:24 | (1-532-678-3951,urna.suscipit.nonummy@google.net)
+  2 | Alfonso    | Case      | sed@hotmail.ca                   | 1-592-151-6858 |            87 | 2022-07-26 10:02:53 | (1-592-151-6858,sed@hotmail.ca)
+(2 rows)
+
+
+vk=> UPDATE users SET first_name = 'ROMAN' WHERE id = 1;
+UPDATE 1
+vk=> SELECT * FROM users  WHERE id = 1;
+
+
+ id | first_name | last_name |              email               |     phone      | main_photo_id |     created_at      |                   user_contacts                   
+----+------------+-----------+----------------------------------+----------------+---------------+---------------------+---------------------------------------------------
+  1 | ROMAN      | Buckley   | urna.suscipit.nonummy@google.net | 1-532-678-3951 |            70 | 2022-09-20 10:14:24 | (1-532-678-3951,urna.suscipit.nonummy@google.net)
+(1 row)

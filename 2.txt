@@ -1,0 +1,16 @@
+postgres=# CREATE EXTENSION "pg_stat_statements";
+CREATE EXTENSION
+postgres=# SELECT * FROM pg_extension WHERE extname = 'pg_stat_statements';
+  oid  |      extname       | extowner | extnamespace | extrelocatable | extversion | extconfig | extcondition 
+-------+--------------------+----------+--------------+----------------+------------+-----------+--------------
+ 73732 | pg_stat_statements |       10 |         2200 | t              | 1.7        |           | 
+(1 row)
+
+
+
+Некоторые расширения не захотели устанавливаться. Вот такая ошибка вылезает.
+
+postgres=# CREATE EXTENSION "postgis";
+ERROR:  could not open extension control file "/usr/share/postgresql/12/extension/postgis.control": No such file or directory
+postgres=# create extension "emaj" cascade;
+ERROR:  could not open extension control file "/usr/share/postgresql/12/extension/emaj.control": No such file or directory
