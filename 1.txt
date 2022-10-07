@@ -1,0 +1,27 @@
+CREATE TABLE subscribe_users (
+    subscriber_user_id INT NOT NULL,
+    subscription_to_user_id INT NOT NULL,
+    status_id INT NOT NULL,
+    requested_at TIMESTAMP,
+    PRIMARY KEY (subscriber_user_id, subscription_to_user_id)
+); 
+
+CREATE TABLE subscribe_users_statuses (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30) UNIQUE
+);
+
+
+CREATE TABLE subscribe_communities (
+    subscriber_user_id INT NOT NULL,
+    subscription_to_community_id INT NOT NULL,
+    status_id INT NOT NULL,
+    requested_at TIMESTAMP,
+    confirmed_at TIMESTAMP,
+    PRIMARY KEY (subscriber_user_id, subscription_to_community_id)
+); 
+
+CREATE TABLE subscribe_communities_statuses (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30) UNIQUE
+);
