@@ -1,0 +1,24 @@
+-- Найти решение с использованием общего табличного выражения 
+
+WITH owner_metadata AS (
+    SELECT 
+        users.id AS owner_id,
+        users.first_name AS owner_first_name,
+        users.last_name AS owner_last_name,
+        photo.url AS owner_main_photo_url
+    FROM users
+        JOIN photo
+        ON photo.id = users.main_photo_id
+)
+SELECT 
+    video.id AS video_id,
+    owner_first_name,
+    owner_last_name,
+    owner_main_photo_url,
+    video.url AS video_url,
+    video.size AS video_size
+FROM video
+    JOIN owner_metadata
+    ON owner_metadata.owner_id = video.owner_id
+ORDER BY video.size DESC
+LIMIT 10;

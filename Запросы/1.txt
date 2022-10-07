@@ -1,0 +1,23 @@
+/* Работаем с базой данных vk. 
+   Найти, кому принадлежат 10 самых больших видеофайлов. 
+   В отчёт вывести идентификатор видеофайла, имя владельца, фамилию владельца, 
+   URL основной фотографии пользователя, URL видеофайла, размер видеофайла. 
+*/
+
+-- Найти решение только на вложенных запросах 
+
+SELECT 
+    video.id AS video_id,
+    (SELECT first_name FROM users WHERE video.owner_id = users.id) AS owner_first_name,
+    (SELECT last_name FROM users WHERE video.owner_id = users.id) AS owner_last_name,
+    (SELECT photo.url FROM photo
+        WHERE (
+            SELECT users.main_photo_id FROM users WHERE video.owner_id = users.id
+        ) = photo.id
+    ) AS owner_main_photo_url,
+    video.url AS video_url,
+    video.size AS video_size
+FROM video
+ORDER BY video.size DESC
+LIMIT 10;
+

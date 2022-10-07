@@ -1,0 +1,16 @@
+-- Найти решение с помощью объединения JOIN
+
+SELECT 
+    video.id AS video_id,
+    users.first_name AS owner_first_name,
+    users.last_name AS owner_last_name,
+    photo.url AS owner_main_photo_url,
+    video.url AS video_url,
+    video.size AS video_size
+FROM video
+    JOIN users
+    ON users.id = video.owner_id
+    JOIN photo
+    ON users.main_photo_id = photo.id
+ORDER BY video.size DESC
+LIMIT 10;
