@@ -1,0 +1,31 @@
+vk=> SELECT * FROM messages WHERE to_user_id  = 20;
+ id  | from_user_id | to_user_id |                           body                            | is_important | is_delivered |         created_at
+-----+--------------+------------+-----------------------------------------------------------+--------------+--------------+----------------------------
+  18 |           72 |         20 | nunc. Quisque                                             | f            | f            | 2022-01-30 03:05:53
+  60 |            4 |         20 | lacus pede sagittis augue, eu tempor erat neque non quam. | t            | f            | 2022-04-18 10:01:58
+  63 |           96 |         20 | nonummy ipsum non arcu. Vivamus sit                       | t            | f            | 2022-06-13 20:15:25
+  88 |           16 |         20 | sed dictum eleifend, nunc risus varius orci,              | t            | f            | 2021-11-04 22:14:06
+  94 |           54 |         20 | primis in faucibus orci luctus et ultrices posuere        | t            | f            | 2021-12-25 16:11:29
+ 101 |           72 |         20 | Lorem Lorem Lorem azazazaza                               | f            | t            | 2022-10-05 03:46:43.705053
+ 102 |           72 |         20 | Lorem Loremazazaz Lorem azazazaza                         | f            | t            | 2022-10-05 03:46:52.79799
+ 103 |           72 |         20 | azazazazLorem Lorem Lorem azazazaza                       | f            | t            | 2022-10-05 03:46:56.566353
+
+
+CREATE FUNCTION find_sender_of_max_number_messages(recipient_id INT)
+vk-# RETURNS INTEGER AS 
+vk-# $$
+vk$# SELECT from_user_id FROM messages
+vk$# WHERE to_user_id = recipient_id 
+vk$# GROUP BY from_user_id
+vk$# ORDER BY COUNT(from_user_id) DESC
+vk$# LIMIT 1;
+vk$# $$
+vk-# LANGUAGE SQL;
+CREATE FUNCTION
+
+
+vk=# SELECT find_sender_of_max_number_messages(20);
+ find_sender_of_max_number_messages 
+------------------------------------
+                                 72
+(1 row)

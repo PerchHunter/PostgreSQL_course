@@ -1,0 +1,59 @@
+CREATE OR REPLACE FUNCTION check_owner_photo()
+RETURNS TRIGGER AS
+$$
+DECLARE is_owner BOOLEAN;
+BEGIN
+    is_owner := EXISTS(SELECT * FROM photo 
+                       WHERE owner_id = NEW.user_id AND id = NEW.main_photo_id);
+    IF NOT is_owner THEN
+    NEW.main_photo_id =  NULL;
+    END IF;
+    RETURN NEW;
+END;
+$$
+LANGUAGE PLPGSQL;
+
+
+CREATE TRIGGER check_profile_main_photo_on_update 
+BEFORE UPDATE OR INSERT ON profiles
+FOR EACH ROW
+EXECUTE FUNCTION check_owner_photo();
+
+
+--ПРОВЕРЯЕМ
+
+vk=# SELECT * FROM profiles WHERE user_id = 100;
+ user_id | main_photo_id |     created_at      |       user_contacts       
+---------+---------------+---------------------+---------------------------
+     100 |            66 | 2022-02-22 13:02:36 | (485-9483,nec@google.com)
+(1 row)
+
+vk=# 
+vk=# SELECT * FROM photo WHERE owner_id = 100;
+ id |            url             | owner_id |         description         |     uploaded_at     | size  |                             metadata                              
+----+----------------------------+----------+-----------------------------+---------------------+-------+-------------------------------------------------------------------
+ 66 | https://vk.com/user/24?p=7 |      100 | faucibus ut, nulla. Cras eu | 2022-09-16 00:43:40 | 12224 | {"id" : 66, "url" : "https://vk.com/user/24?p=7", "size" : 12224}
+(1 row)
+
+--В ТАБЛИЦЕ ПРОФИЛЯ И ТАБЛИЦЕ ФОТО ID ФОТО И ПОЛЬЗОВАТЕЛЯ СОВПАДАЮТ
+-- ЗАМЕНЯЕМ ID ФОТО, ПРОВЕРЯЕМ, В СТОЛБЦЕ ЗНАЧЕНИЕ NULL
+
+vk=# UPDATE profiles SET main_photo_id = 75 WHERE user_id = 100;
+UPDATE 1
+vk=# SELECT * FROM profiles WHERE user_id = 100;
+ user_id | main_photo_id |     created_at      |       user_contacts       
+---------+---------------+---------------------+---------------------------
+     100 |               | 2022-02-22 13:02:36 | (485-9483,nec@google.com)
+(1 row)
+
+
+-- ВОЗВРАЩАЕМ ПРЕЖНЕЕ ID ФОТО, ПРОВЕРЯЕМ, СТОЛБЕЦ ЗАПОЛНЕН
+
+vk=# UPDATE profiles SET main_photo_id = 66 WHERE user_id = 100;
+UPDATE 1
+vk=# SELECT * FROM profiles WHERE user_id = 100;
+ user_id | main_photo_id |     created_at      |       user_contacts       
+---------+---------------+---------------------+---------------------------
+     100 |            66 | 2022-02-22 13:02:36 | (485-9483,nec@google.com)
+(1 row)
+

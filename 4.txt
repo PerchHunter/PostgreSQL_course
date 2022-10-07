@@ -1,0 +1,41 @@
+-- Не изменяемое
+
+CREATE VIEW show_info_of_communities AS
+SELECT * FROM users us
+LEFT JOIN communities co
+ON us.id = co.creator_id
+WHERE us.id <= 10
+ORDER BY us.id;
+
+
+--Изменяемое
+
+CREATE VIEW show_last_added_community AS
+SELECT * FROM communities
+WHERE creator_id = 55 
+ORDER BY created_at DESC;
+
+SELECT * FROM show_last_added_community;
+
+ id |                                    name                                     | creator_id |     created_at      | members 
+----+-----------------------------------------------------------------------------+------------+---------------------+---------
+  2 | aliquet molestie tellus. Aenean egestas hendrerit neque. In ornare sagittis |         55 | 2022-09-16 02:10:12 | 
+ 44 | Donec tempor, est ac mattis semper, dui lectus rutrum urna,                 |         55 | 2022-06-09 11:07:52 | 
+ 70 | dapibus id, blandit at, nisi. Cum sociis natoque penatibus et               |         55 | 2022-05-10 18:27:56 | 
+(3 rows)
+
+
+UPDATE show_last_added_community 
+SET name = 'test test test'
+WHERE id = 2;
+
+SELECT * FROM show_last_added_community;
+ id |                             name                              | creator_id |     created_at      | members 
+----+---------------------------------------------------------------+------------+---------------------+---------
+  2 | test test test                                                |         55 | 2022-09-16 02:10:12 | 
+ 44 | Donec tempor, est ac mattis semper, dui lectus rutrum urna,   |         55 | 2022-06-09 11:07:52 | 
+ 70 | dapibus id, blandit at, nisi. Cum sociis natoque penatibus et |         55 | 2022-05-10 18:27:56 | 
+(3 rows)
+
+
+
