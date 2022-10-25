@@ -1,0 +1,120 @@
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (5,44),
+  (4,40),
+  (4,36),
+  (5,91),
+  (1,56),
+  (5,82),
+  (2,11),
+  (3,99),
+  (2,84),
+  (4,57);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (1,40),
+  (4,14),
+  (2,20),
+  (3,49),
+  (2,67),
+  (3,22),
+  (2,27),
+  (4,23),
+  (2,46),
+  (2,99);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (5,18),
+  (2,71),
+  (3,33),
+  (3,6),
+  (2,26),
+  (4,82),
+  (3,90),
+  (2,51),
+  (3,16),
+  (2,23);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (4,39),
+  (4,31),
+  (5,41),
+  (2,70),
+  (3,94),
+  (3,12),
+  (4,30),
+  (3,48),
+  (5,96),
+  (4,83);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (3,20),
+  (5,48),
+  (4,21),
+  (3,31),
+  (3,55),
+  (2,44),
+  (1,89),
+  (4,4),
+  (2,2),
+  (3,57);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (3,62),
+  (3,56),
+  (2,58),
+  (2,35),
+  (5,47),
+  (2,45),
+  (2,8),
+  (5,80),
+  (2,40),
+  (4,75);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (5,81),
+  (1,5),
+  (1,21),
+  (3,97),
+  (4,100),
+  (4,99),
+  (4,86),
+  (4,23),
+  (4,22),
+  (4,64);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (4,89),
+  (5,93),
+  (2,67),
+  (1,91),
+  (4,36),
+  (4,23),
+  (3,92),
+  (4,34),
+  (4,2),
+  (4,73);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (5,73),
+  (3,23),
+  (4,23),
+  (5,46),
+  (4,44),
+  (2,15),
+  (5,84),
+  (3,16),
+  (3,75),
+  (4,29);
+INSERT INTO resume_work_shedule (shedule_id,resume_id)
+VALUES
+  (4,65),
+  (2,92),
+  (3,17),
+  (4,22),
+  (2,55),
+  (4,29),
+  (2,32),
+  (2,98),
+  (2,48),
+  (2,23);

@@ -1,0 +1,120 @@
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (5,80),
+  (4,72),
+  (1,95),
+  (2,39),
+  (3,53),
+  (5,56),
+  (3,40),
+  (2,97),
+  (2,85),
+  (5,15);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (1,69),
+  (2,27),
+  (2,55),
+  (2,15),
+  (2,83),
+  (3,53),
+  (4,80),
+  (4,11),
+  (2,78),
+  (3,83);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (3,94),
+  (5,99),
+  (4,20),
+  (4,67),
+  (1,61),
+  (4,44),
+  (4,10),
+  (3,69),
+  (4,16),
+  (2,31);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (5,56),
+  (1,70),
+  (3,69),
+  (3,2),
+  (2,78),
+  (2,11),
+  (3,64),
+  (4,13),
+  (3,50),
+  (1,5);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (5,87),
+  (3,51),
+  (1,25),
+  (3,55),
+  (3,86),
+  (5,5),
+  (3,98),
+  (2,9),
+  (2,72),
+  (2,14);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (5,28),
+  (5,62),
+  (2,69),
+  (1,6),
+  (2,33),
+  (4,60),
+  (1,68),
+  (5,92),
+  (2,76),
+  (4,9);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (2,24),
+  (2,93),
+  (2,3),
+  (4,95),
+  (1,75),
+  (1,29),
+  (3,60),
+  (4,75),
+  (4,11),
+  (4,85);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (3,65),
+  (2,10),
+  (2,74),
+  (3,84),
+  (2,94),
+  (5,68),
+  (3,64),
+  (3,86),
+  (5,9),
+  (3,34);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (4,34),
+  (4,99),
+  (1,5),
+  (2,22),
+  (3,47),
+  (4,26),
+  (2,8),
+  (4,59),
+  (1,60),
+  (3,73);
+INSERT INTO resume_busyness (busyness_id,resume_id)
+VALUES
+  (5,60),
+  (5,18),
+  (2,18),
+  (5,62),
+  (1,13),
+  (2,75),
+  (1,23),
+  (3,64),
+  (2,27),
+  (2,4);

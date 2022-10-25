@@ -1,0 +1,120 @@
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (1,'true','true','true','false','false','false','true','true','false','false'),
+  (2,'true','false','false','true','false','true','false','false','false','true'),
+  (3,'false','true','true','false','false','false','false','true','true','false'),
+  (4,'true','true','true','true','false','false','true','false','false','true'),
+  (5,'false','true','false','false','true','false','true','false','true','true'),
+  (6,'false','true','false','false','true','true','true','false','true','false'),
+  (7,'false','false','true','false','true','false','false','false','false','false'),
+  (8,'false','true','true','true','false','true','true','false','false','false'),
+  (9,'true','false','false','true','true','true','true','true','false','true'),
+  (10,'false','true','true','true','true','true','true','true','true','true');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (11,'false','true','false','true','true','false','true','true','false','true'),
+  (12,'true','true','false','false','false','true','false','true','true','true'),
+  (13,'false','true','true','false','false','false','true','false','false','true'),
+  (14,'true','false','false','false','true','true','false','true','true','true'),
+  (15,'false','false','false','false','false','false','true','false','false','false'),
+  (16,'false','false','false','false','true','false','true','true','true','true'),
+  (17,'false','false','false','false','true','true','false','true','false','false'),
+  (18,'false','true','false','false','true','false','true','false','false','true'),
+  (19,'true','true','false','false','false','true','false','true','true','false'),
+  (20,'false','false','true','false','true','false','false','false','true','false');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (21,'true','true','false','true','true','true','false','false','true','true'),
+  (22,'false','true','true','false','false','true','true','true','false','false'),
+  (23,'false','false','true','true','false','false','false','false','true','false'),
+  (24,'false','true','true','false','true','true','false','true','false','false'),
+  (25,'true','false','true','true','false','false','false','true','true','true'),
+  (26,'false','true','true','false','true','true','false','true','false','false'),
+  (27,'false','false','false','false','true','false','false','false','false','true'),
+  (28,'true','true','true','false','false','true','true','false','false','false'),
+  (29,'true','true','true','true','false','false','false','true','false','true'),
+  (30,'true','true','false','false','true','true','false','true','true','true');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (31,'true','true','false','false','true','true','true','true','true','true'),
+  (32,'false','false','false','false','false','false','false','true','false','true'),
+  (33,'true','false','false','true','true','true','false','false','false','false'),
+  (34,'false','false','false','false','false','false','false','false','false','true'),
+  (35,'true','false','false','false','true','true','true','true','false','true'),
+  (36,'true','false','true','true','true','true','true','true','false','false'),
+  (37,'true','false','true','false','false','true','false','true','false','true'),
+  (38,'true','false','true','true','false','true','false','false','true','true'),
+  (39,'false','false','false','true','true','true','false','true','false','true'),
+  (40,'true','true','true','false','true','true','false','true','true','false');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (41,'true','false','true','false','false','false','true','false','false','false'),
+  (42,'true','true','false','false','false','true','true','false','false','true'),
+  (43,'false','false','false','true','true','true','false','false','false','true'),
+  (44,'false','false','false','false','false','true','true','true','false','false'),
+  (45,'true','false','true','true','false','true','true','true','true','false'),
+  (46,'true','true','true','true','false','false','false','false','true','false'),
+  (47,'true','true','false','false','false','true','true','true','true','true'),
+  (48,'true','true','true','true','true','true','false','true','true','false'),
+  (49,'false','false','true','false','true','false','true','false','true','false'),
+  (50,'true','false','false','false','true','true','true','false','false','false');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (51,'true','true','true','false','false','true','true','false','true','false'),
+  (52,'false','true','true','true','false','false','true','false','true','true'),
+  (53,'false','false','true','true','true','false','false','true','false','false'),
+  (54,'false','false','false','false','false','true','true','false','false','true'),
+  (55,'true','true','false','false','false','false','true','true','false','false'),
+  (56,'true','true','true','false','false','true','true','false','true','false'),
+  (57,'true','true','false','false','false','false','true','false','false','true'),
+  (58,'true','true','false','true','true','false','false','false','true','true'),
+  (59,'false','false','false','false','false','true','true','false','true','true'),
+  (60,'false','true','true','true','false','true','false','false','false','false');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (61,'false','false','true','false','false','false','false','true','true','true'),
+  (62,'true','true','false','false','true','false','true','true','true','false'),
+  (63,'false','true','false','true','true','false','true','true','true','false'),
+  (64,'true','true','true','true','true','true','true','false','true','true'),
+  (65,'true','false','false','false','true','true','true','true','true','false'),
+  (66,'false','true','false','false','false','true','true','false','true','false'),
+  (67,'true','false','false','true','true','true','false','true','true','true'),
+  (68,'false','true','true','false','true','true','false','true','true','false'),
+  (69,'false','true','true','false','false','false','true','false','true','true'),
+  (70,'false','false','true','true','false','true','true','true','false','true');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (71,'false','false','true','true','false','false','false','true','false','true'),
+  (72,'false','false','false','false','true','false','true','true','true','false'),
+  (73,'false','true','false','true','false','false','false','false','true','true'),
+  (74,'false','false','false','true','false','true','false','true','true','true'),
+  (75,'false','false','false','true','true','true','false','true','true','true'),
+  (76,'false','false','false','true','false','true','false','false','false','true'),
+  (77,'false','false','true','false','false','true','true','false','true','false'),
+  (78,'false','true','false','false','false','true','true','false','false','true'),
+  (79,'false','true','false','false','false','false','true','false','true','true'),
+  (80,'true','false','true','false','true','true','false','true','false','true');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (81,'false','true','true','true','true','true','false','false','false','false'),
+  (82,'false','false','false','false','true','true','false','true','true','false'),
+  (83,'true','true','true','true','true','false','false','true','false','true'),
+  (84,'true','true','false','true','true','false','true','false','false','false'),
+  (85,'true','true','true','true','false','false','false','true','true','true'),
+  (86,'false','true','true','false','false','true','false','false','true','false'),
+  (87,'false','false','true','true','false','false','false','false','false','false'),
+  (88,'false','false','false','true','true','true','false','true','false','false'),
+  (89,'true','true','false','true','false','true','true','true','false','true'),
+  (90,'false','true','false','true','false','true','true','false','true','true');
+INSERT INTO mailing_and_notifications (worker_id,alerts_and_tips,news_and_advertising,new_vacancies,birthday_greetings,daily_notification_of_resume_views,instant_notifications_of_resume_views,internships,auto_search_for_vacancies,job_invitations,correspondence_with_the_employer)
+VALUES
+  (91,'false','false','true','false','true','false','true','false','false','false'),
+  (92,'true','true','false','true','true','false','true','true','true','false'),
+  (93,'true','true','false','true','false','true','true','true','false','true'),
+  (94,'true','false','true','false','false','true','true','false','true','false'),
+  (95,'false','true','true','false','true','true','true','true','true','false'),
+  (96,'false','false','true','false','true','false','true','false','false','false'),
+  (97,'true','false','false','false','true','true','false','true','false','false'),
+  (98,'true','false','false','false','false','true','true','false','false','true'),
+  (99,'true','true','true','false','true','true','true','true','true','false'),
+  (100,'true','false','true','false','false','true','true','true','false','true');
